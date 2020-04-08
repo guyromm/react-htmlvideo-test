@@ -23,7 +23,7 @@ function HTMLVideo({url}) {
       dispatch({type:'loadProgress',loadProgress:cb});
     }
   });
-  const onProg = (e) => // {nativeEvent:{target}}) =>
+  const onProg = (e) =>
 	{
 	  let tr = e.nativeEvent.target.buffered;
 	  const cb = computeBuffered(tr);
@@ -35,7 +35,7 @@ function HTMLVideo({url}) {
 	  const ct = nativeEvent.target.currentTime;
 	  dispatch({type:'seekProgress',seekProgress:ct});
 	}
-
+  
   const onSeeked = ({nativeEvent}) => {
     const ct = nativeEvent.target.currentTime;
     dispatch({type:'seekProgress',ct});

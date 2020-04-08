@@ -18,6 +18,7 @@ const rootReducer = (s,n) => {
     rt[n.type]=n[n.type]
   }
   if (['videoURL','errorGettingVideo'].includes(n.type)) delete rt.videoLoading;
+  if (n.type==='videoURL') delete rt.errorGettingVideo;
   return rt;
 
 }
